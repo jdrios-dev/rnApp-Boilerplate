@@ -1,8 +1,21 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {View} from 'react-native';
+import {Button, Text, View} from 'react-native';
 
 const HomeScreen = () => {
-  return <View>HomeScreen</View>;
+  const navigation = useNavigation();
+  return (
+    <View
+      style={{
+        flex: 1,
+      }}>
+      <Text>HomeScreen</Text>
+      <Button
+        title="Detail Screen"
+        onPress={() => navigation.navigate('DetailScreen' as any)}
+      />
+    </View>
+  );
 };
 
 export default HomeScreen;
